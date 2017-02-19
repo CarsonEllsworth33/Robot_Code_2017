@@ -38,4 +38,6 @@ void PickerSub::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-
+void PickerSub::PickUp(float speed){
+	picker_Motor->Set(speed);
+}
