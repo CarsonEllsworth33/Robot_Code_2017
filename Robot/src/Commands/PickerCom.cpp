@@ -30,13 +30,13 @@ buttonBPressed = false;
 
 // Called repeatedly when this Command is scheduled to run
 void PickerCom::Execute() {
-	buttonBPressed = Robot::oi->getDriverJoystick()->GetRawButton(1);
+	buttonBPressed = Robot::oi->getDriverJoystick()->GetRawButton(2);
 
 		if(buttonBPressed){
-			Robot::shooterSub->Shoot(1);
+			Robot::pickerSub->PickUp(1);
 		}//end of if
 		else{
-			Robot::shooterSub->Shoot(0);
+			Robot::pickerSub->PickUp(0);
 		}//end of else
 }
 
