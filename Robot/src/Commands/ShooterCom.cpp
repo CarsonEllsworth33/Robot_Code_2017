@@ -33,7 +33,7 @@ void ShooterCom::Execute() {
 	buttonAPressed = Robot::oi->getDriverJoystick()->GetRawButton(1);
 
 	if(buttonAPressed){
-		Robot::shooterSub->Shoot(1);
+		Robot::shooterSub->Shoot(-1);
 	}//end of if
 	else{
 		Robot::shooterSub->Shoot(0);

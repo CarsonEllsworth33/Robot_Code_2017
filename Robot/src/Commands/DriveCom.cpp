@@ -32,9 +32,9 @@ void DriveCom::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveCom::Execute() {
-	YAxis = Robot::oi->getDriverJoystick()->GetRawAxis(0);
+	RotAxis = Robot::oi->getDriverJoystick()->GetRawAxis(0);
 		XAxis = Robot::oi->getDriverJoystick()->GetRawAxis(1);//these are for Xbox 360 controller
-		RotAxis = Robot::oi->getDriverJoystick()->GetRawAxis(4);
+		YAxis = Robot::oi->getDriverJoystick()->GetRawAxis(4);
 
 		if(XAxis > -0.20 && XAxis < 0.20)
 		{
@@ -60,7 +60,7 @@ void DriveCom::Execute() {
 		{
 			RotAxis = RotAxis * fabs(RotAxis);
 		}
-		Robot::driveSub->MecanumDrive(XAxis,YAxis, RotAxis, 0);
+		Robot::driveSub->MecanumDrive(XAxis,-YAxis, RotAxis, 0);
 }
 
 // Make this return true when this Command no longer needs to run execute()
