@@ -48,3 +48,11 @@ void DriveSub::MecanumDrive(float X, float Y, float Rot, float gyro)
 {
 	robotDrive41->MecanumDrive_Cartesian(X,Y,Rot,gyro);
 }
+
+void DriveSub::HalfSpeed(float X, float Y, float Rot, float gyro){
+	X = X/2;
+	Y = Y/2;
+	Rot = Rot/2;
+	gyro = gyro/2;
+	DriveSub::MecanumDrive(X,Y,Rot,gyro);
+}
