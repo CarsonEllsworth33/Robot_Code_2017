@@ -59,6 +59,7 @@ void Robot::AutonomousInit() {
 
 void Robot::AutonomousPeriodic() {
 	Scheduler::GetInstance()->Run();
+
 }
 
 void Robot::TeleopInit() {

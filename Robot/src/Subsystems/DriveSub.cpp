@@ -55,4 +55,13 @@ void DriveSub::HalfSpeed(float X, float Y, float Rot, float gyro){
 	Rot = Rot/2;
 	gyro = gyro/2;
 	DriveSub::MecanumDrive(X,Y,Rot,gyro);
+
+}
+void DriveSub::DriveForwardAuto(){
+	bL_Motor->Set(.5);
+	fL_Motor->Set(.5);
+	fR_Motor->Set(-.5);
+	bR_Motor->Set(-.5);
+
+
 }
